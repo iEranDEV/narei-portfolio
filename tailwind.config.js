@@ -26,7 +26,7 @@ module.exports = {
 		},
 		fontFamily: {
 			'sans': ['Quicksand', 'ui-sans-serif', 'system-ui'],
-			'mono': ['Bebas Neue']
+			'mono': ['Braah One']
 		}
 	},
 	plugins: [],

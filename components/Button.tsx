@@ -2,7 +2,9 @@ import { motion } from "framer-motion"
 import { BsArrowRightShort } from 'react-icons/bs'
 
 type ButtonProps = {
-    text: string
+    text: string,
+    white?: boolean,
+    icon?: JSX.Element
 }
 
 const buttonBorderVariants = {
@@ -11,16 +13,16 @@ const buttonBorderVariants = {
     }
 }
 
-export default function Button({ text }: ButtonProps) {
+export default function Button({ text, white, icon }: ButtonProps) {
 
     return (
-        <motion.div whileHover={'hover'} className="cursor-pointer">
+        <motion.a whileHover={'hover'} className="w-56 cursor-pointer">
             <div className="w-full flex gap-4 justify-between items-center uppercase font-semibold px-5 py-1">
-                <BsArrowRightShort className="h-5 w-5"/>
+                {icon ? icon : <BsArrowRightShort className="h-5 w-5"/>}
                 <span>{text}</span>
             </div>
 
-            <motion.div initial={{width: '50%'}} variants={buttonBorderVariants} className="h-0.5 bg-black"></motion.div>
-        </motion.div>
+            <motion.div initial={{width: '50%'}} variants={buttonBorderVariants} className={'h-0.5 ' + (white ? 'bg-white' : 'bg-black')}></motion.div>
+        </motion.a>
     )
 }
