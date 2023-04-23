@@ -21,7 +21,7 @@ module.exports = {
 					900: '#6247aa'
 				},
 				white: '#FFFDFA',
-				black: '#0E1111'
+				black: '#4C4E52'
 			}
 		},
 		fontFamily: {

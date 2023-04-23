@@ -1,12 +1,12 @@
-import { BsDownload, BsGithub, BsLinkedin, BsTwitter } from "react-icons/bs";
-import Button from "../Button";
-import { motion } from "framer-motion";
+import { BsDownload } from "react-icons/bs";
+import Button from "../general/Button";
+import SocialIcons from "../general/SocialIcons";
 
 export default function AboutSection() {
 
     return (
-        <div className="w-full relative z-20 min-h-screen text-white bg-gradient-to-t from-purple-400 to-purple-500 px-5 md:px-10 lg:px-40 py-10 flex flex-col justify-center gap-10">
-            <h1 className="text-5xl font-mono tracking-wide">ABOUT ME</h1>
+        <div className="w-full relative z-20 min-h-screen text-white bg-gradient-to-t from-purple-400 to-purple-500 px-5 md:px-10 lg:px-40 py-20 flex flex-col justify-center gap-10">
+            <h1 className="text-3xl md:text-5xl font-mono tracking-wide">ABOUT ME</h1>
             
             <p className="text-lg">
                 Hi! My name is Olaf and I'm 18-year-old developer from Poland, who has been in contact with programming in various forms since childhood. 
@@ -18,17 +18,7 @@ export default function AboutSection() {
                 Thanks for stopping by my portfolio website, and I hope you enjoy checking out some of my work!
             </p>
 
-            <div className="flex items-center gap-5">
-                <motion.a whileHover={{y: -5}} href="">
-                    <BsGithub className="h-6 w-6" />
-                </motion.a>
-                <motion.a whileHover={{y: -5}} href="">
-                    <BsLinkedin className="h-6 w-6" />
-                </motion.a>
-                <motion.a whileHover={{y: -5}} href="">
-                    <BsTwitter className="h-6 w-6" />
-                </motion.a>
-            </div>
+            <SocialIcons />
 
             <div className="flex justify-between flex-col md:flex-row gap-5">
                 <Button text={'check my work'} white />
