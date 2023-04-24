@@ -11,7 +11,7 @@ export default function MainSection() {
 
             {/* Left section - name */}
             <div className="w-full h-full flex flex-col justify-center items-center z-30">
-                <h1 className="text-5xl">Hi! I'm&nbsp;
+                <h1 className="text-5xl">Hi! I&apos;m&nbsp;
                     <span className="text-6xl tracking-wide text-transparent bg-clip-text bg-gradient-to-br from-indigo-400 to-purple-500 font-mono">OLAF </span>
                 </h1>
                 <h2 className="text-2xl text-black/50 mb-10">Frontend developer</h2>
