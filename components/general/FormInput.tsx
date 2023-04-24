@@ -23,9 +23,9 @@ export default function FormInput({ text, area }: {text: string, area?: boolean}
     return (
         <div className="relative">
             {area ? 
-                <textarea ref={inputElement} rows={10} cols={10} value={data} onChange={(e) => setData(e.target.value)} onFocus={() => setFocus(true)} onBlur={() => setFocus(false)} className="z-20 w-full peer border border-l-2 border-b-2 focus:outline-purple-600 border-black/50 p-2 rounded-lg"></textarea>
+                <textarea ref={inputElement} rows={10} cols={10} value={data} onChange={(e) => setData(e.target.value)} onFocus={() => setFocus(true)} onBlur={() => setFocus(false)} className="z-20 w-full bg-white peer border border-l-2 border-b-2 focus:outline-purple-600 border-black/50 p-2 rounded-lg"></textarea>
             :
-                <input ref={inputElement} type="text" value={data} onChange={(e) => setData(e.target.value)} onFocus={() => setFocus(true)} onBlur={() => setFocus(false)} className="z-20 w-full peer border border-l-2 border-b-2 focus:outline-purple-600 border-black/50 p-2 rounded-lg" />
+                <input ref={inputElement} type="text" value={data} onChange={(e) => setData(e.target.value)} onFocus={() => setFocus(true)} onBlur={() => setFocus(false)} className="z-20 bg-white w-full peer border border-l-2 border-b-2 focus:outline-purple-600 border-black/50 p-2 rounded-lg" />
             }
             <motion.span ref={scope} onClick={() => (inputElement.current as any).focus()} initial={{x: 0, y: 0, padding: '0px 0px 0px 0px'}} className="absolute z-10 top-2.5 text-black/50 peer-focus:text-purple-600 bg-white left-2.5">{text}</motion.span>
         </div>

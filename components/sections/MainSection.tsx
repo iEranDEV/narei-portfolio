@@ -30,7 +30,7 @@ export default function MainSection() {
             </motion.div>
 
             {/* Wave */}
-            <svg width="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" className="z-10 absolute bottom-0 xl:-bottom-20 left-0 transition duration-300 ease-in-out delay-150">
+            <svg width="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" className="z-10 absolute -bottom-1 xl:-bottom-20 left-0 transition duration-300 ease-in-out delay-150">
                 <path d="M 0,400 C 0,400 0,200 0,200 C 89.89285714285714,192.96428571428572 179.78571428571428,185.92857142857142 299,205 C 418.2142857142857,224.07142857142858 566.7499999999999,269.25 693,265 C 819.2500000000001,260.75 923.2142857142858,207.07142857142858 1044,188 C 1164.7857142857142,168.92857142857142 1302.392857142857,184.46428571428572 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" strokeWidth="0" fill="#a855f7" fillOpacity="1" className="transition-all duration-300 ease-in-out delay-150 path-0"></path>
             </svg>
         </div>

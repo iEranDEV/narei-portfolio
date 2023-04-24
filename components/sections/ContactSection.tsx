@@ -9,7 +9,7 @@ export default function ContactSection() {
 
 
     return (
-        <div className="w-full z-10 relative py-20 h-screen px-5 md:px-10 lg:px-40 flex flex-col justify-center items-center">
+        <div className="w-full z-10 bg-white relative py-20 h-screen px-5 md:px-10 lg:px-40 flex flex-col justify-center items-center">
 
             <div className="w-full grid grid-cols-1 md:grid-cols-2 mt-10 md:w-[50rem] md:h-[40rem] mb-10">
                 <div className="w-full flex flex-col gap-2 pr-5">
