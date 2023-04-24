@@ -10,7 +10,7 @@ export default function AboutSection() {
             
             <p className="text-lg">
                 Hi! My name is Olaf and I&apos;m 18-year-old developer from Poland, who has been in contact with programming in various forms since childhood. 
-                Currently, I'm focused on Frontend, and I&apos;m excited to continue developing my skills in this area. 
+                Currently, I&apos;m focused on Frontend, and I&apos;m excited to continue developing my skills in this area. 
                 I worked for few months as a developer in a company creating ERP systems. In my free time, I enjoy working on my personal coding projects and exploring new technologies.
                 I&apos;m constantly challenging myself to learn new things and improve my knowledge. 
                 I&apos;m alays eager to take on new challenges.
