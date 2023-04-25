@@ -40,7 +40,7 @@ export default function ContactSection() {
                         <span className="mb-1">You can also find me here:</span>
                         <span className="flex gap-2 items-center text-black/50">
                             <BsEnvelope  />
-                            ieranofficial@gmail.com
+                            kontakt@narei.me
                         </span>
                         <SocialIcons black />
                     </div>

@@ -16,8 +16,8 @@ const buttonBorderVariants = {
 export default function Button({ text, white, icon }: ButtonProps) {
 
     return (
-        <motion.a whileHover={'hover'} className="w-56 cursor-pointer">
-            <div className="w-full flex gap-4 justify-between items-center uppercase font-semibold px-5 py-1">
+        <motion.a whileHover={'hover'} className="cursor-pointer">
+            <div className="w-full flex gap-4 justify-between items-center uppercase font-semibold px-5 py-1 text-sm md:text-base">
                 {icon ? icon : <BsArrowRightShort className="h-5 w-5"/>}
                 <span>{text}</span>
             </div>

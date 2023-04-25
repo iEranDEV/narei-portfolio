@@ -20,7 +20,7 @@ export default function AboutSection() {
 
             <SocialIcons />
 
-            <div className="flex justify-between flex-col md:flex-row gap-5">
+            <div className="flex justify-between flex-col md:flex-row gap-5 w-52 md:w-full">
                 <Button text={'check my work'} white />
                 <Button icon={<BsDownload className="h-4 w-4" />} text={'download cv'} white />
             </div>
