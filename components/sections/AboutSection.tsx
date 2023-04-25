@@ -5,7 +5,7 @@ import SocialIcons from "../general/SocialIcons";
 export default function AboutSection() {
 
     return (
-        <div className="w-full relative z-20 min-h-screen text-white bg-gradient-to-t from-purple-400 to-purple-500 px-5 md:px-10 lg:px-40 py-20 flex flex-col justify-center gap-10">
+        <div id="about_section" className="w-full relative z-20 min-h-screen text-white bg-gradient-to-t from-purple-400 to-purple-500 px-5 md:px-10 lg:px-40 py-20 flex flex-col justify-center gap-10">
             <h1 className="text-3xl md:text-5xl font-mono tracking-wide">ABOUT ME</h1>
             
             <p className="text-lg">
@@ -21,7 +21,7 @@ export default function AboutSection() {
             <SocialIcons />
 
             <div className="flex justify-between flex-col md:flex-row gap-5 w-52 md:w-full">
-                <Button text={'check my work'} white />
+                <Button link="#projects_section" text={'check my work'} white />
                 <Button icon={<BsDownload className="h-4 w-4" />} text={'download cv'} white />
             </div>
         </div>

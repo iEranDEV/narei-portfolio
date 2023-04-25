@@ -16,7 +16,7 @@ export default function MainSection() {
                 </h1>
                 <h2 className="text-2xl text-black/50 mb-10">Frontend developer</h2>
 
-                <Button text="know me better" />
+                <Button link="#about_section" text="know me better" />
             </div>
 
             {/* Right section - photo */}

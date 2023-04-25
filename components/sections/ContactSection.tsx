@@ -1,12 +1,53 @@
 import Image from "next/image";
 import messagePic from '@/public/message.png'
 import SocialIcons from "../general/SocialIcons";
-import { BsEnvelope } from "react-icons/bs";
+import { BsCheck, BsEnvelope, BsExclamationSquareFill, BsSend } from "react-icons/bs";
 import FormInput from "../general/FormInput";
-import Button from "../general/Button";
+import { useState, useRef, useEffect } from "react";
+import { motion, useAnimate } from "framer-motion";
+import emailjs from '@emailjs/browser';
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 export default function ContactSection() {
+    const form = useRef(null);
+    const [statusText, animateStatusText] = useAnimate();
 
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    })
+    const [status, setStatus] = useState('none');
+
+    const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if(process.env.EMAIL_SERVICE_ID && process.env.EMAIL_TEMPLATE_ID && process.env.EMAIL_PUBLIC_KEY) {
+            if(formData.email && formData.name && formData.message && form.current) {
+                setStatus(() => 'sending')
+                emailjs.sendForm(process.env.EMAIL_SERVICE_ID, process.env.EMAIL_TEMPLATE_ID, form.current, process.env.EMAIL_PUBLIC_KEY)
+                .then(() => {
+                    setStatus(() => 'sent');
+                }, () => {
+                    setStatus(() => 'error');
+                });
+            }
+        }
+    }
+
+    useEffect(() => {
+        if(status === 'sent' || status === 'error') {
+            animateStatusText(statusText.current, { y: 0 });
+
+            const timeout = setTimeout(() => {
+                animateStatusText(statusText.current, { y: 0 });
+                setStatus(() => 'none');
+            }, 5000);
+
+            return () => {
+                clearTimeout(timeout);
+            }
+        }
+    }, [status]);
 
     return (
         <div className="w-full z-10 bg-white relative py-20 h-screen px-5 md:px-10 lg:px-40 flex flex-col justify-center items-center">
@@ -23,13 +64,41 @@ export default function ContactSection() {
 
                     {/* Form */}
                     <div className="h-full py-5">
-                        <form onSubmit={(e) => e.preventDefault()} className="h-full flex flex-col gap-3">
-                            <FormInput text="Your name" />
-                            <FormInput text="Email address" />
-                            <FormInput text="Message" area />
+                        <form ref={form} onSubmit={(e) => onSubmit(e)} className="h-full flex flex-col gap-3">
+                            <FormInput name="name" value={formData.name} setValue={(e: any) => setFormData({...formData, name: e.target.value})} text="Your name" />
+                            <FormInput name="email" value={formData.email} setValue={(e: any) => setFormData({...formData, email: e.target.value})} text="Email address" />
+                            <FormInput name="message" value={formData.message} setValue={(e: any) => setFormData({...formData, message: e.target.value})} text="Message" area />
                             <div className="flex justify-end">
-                                <Button text="submit form" />
+                                <motion.button type="submit"  whileHover={'hover'} className="cursor-pointer">
+                                    <div className="w-full flex gap-4 justify-between items-center uppercase font-semibold px-5 py-1 text-sm md:text-base">
+                                        <div>
+                                        {
+                                            {
+                                                'none': <BsSend className="h-4 w-4"/>,
+                                                'sending': <AiOutlineLoading3Quarters className="h-4 w-4 animate-spin"></AiOutlineLoading3Quarters>,
+                                                'sent': <BsCheck className="h-4 w-4"></BsCheck>,
+                                                'error': <BsExclamationSquareFill className="h-4 w-4"></BsExclamationSquareFill>
+                                            }[status]
+                                        }
+                                        </div>
+                                        <span>send message</span>
+                                    </div>
+
+                                    <motion.div initial={{width: '50%'}} variants={{hover: {width: '100%'}}} className="h-0.5 bg-black"></motion.div>
+                                </motion.button>
                             </div>
+                            <motion.p ref={statusText} initial={{y: 20}} className="flex gap-2 items-center text-black/50">{
+                                {
+                                    'sent': <>
+                                        <BsCheck className="h-4 w-4"></BsCheck>
+                                        Message sent successfully!
+                                    </>,
+                                    'error': <>
+                                        <BsExclamationSquareFill className="h-4 w-4"></BsExclamationSquareFill>
+                                        An error occured. Check your data and try submitting again.
+                                    </>
+                                }[status]
+                                }</motion.p>
                         </form>
                     </div>
                 </div>
@@ -40,7 +109,7 @@ export default function ContactSection() {
                         <span className="mb-1">You can also find me here:</span>
                         <span className="flex gap-2 items-center text-black/50">
                             <BsEnvelope  />
-                            kontakt@narei.me
+                            contact@narei.me
                         </span>
                         <SocialIcons black />
                     </div>
