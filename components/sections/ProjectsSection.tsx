@@ -18,7 +18,7 @@ export default function ProjectsSection() {
             <span className="text-3xl md:text-5xl tracking-wide text-transparent bg-clip-text bg-gradient-to-br from-indigo-400 to-purple-500 font-mono">
                 MY PROJECTS 
             </span>
-            <p className='text-black/50 md:w-1/2'>Below you can see my best projects and their working live versions. If you want to see the full list of apps I've created, check out my github profile.</p>
+            <p className='text-black/50 md:w-1/2'>Below you can see my best projects and their working live versions. If you want to see the full list of apps I&apos;ve created, check out my github profile.</p>
 
             <div className="w-full h-full flex flex-col gap-32 mt-10 mb-32">
                 {/* Game center app */}
