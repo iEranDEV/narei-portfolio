@@ -1,12 +1,13 @@
 import { BsDownload } from "react-icons/bs";
 import Button from "../general/Button";
 import SocialIcons from "../general/SocialIcons";
+import { motion } from "framer-motion";
 
 export default function AboutSection() {
 
     return (
         <div id="about_section" className="w-full relative z-20 min-h-screen text-white bg-gradient-to-t from-purple-400 to-purple-500 px-5 md:px-10 lg:px-40 py-20 flex flex-col justify-center gap-10">
-            <h1 className="text-3xl md:text-5xl font-mono tracking-wide">ABOUT ME</h1>
+            <motion.h1 initial={{opacity: 0, y: 20}} whileInView={{opacity: 1, y: 0}} viewport={{once: true}} className="text-3xl md:text-5xl font-mono tracking-wide">ABOUT ME</motion.h1>
             
             <p className="text-lg">
                 Hi! My name is Olaf and I&apos;m 18-year-old developer from Poland, who has been in contact with programming in various forms since childhood. 

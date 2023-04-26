@@ -11,18 +11,18 @@ export default function MainSection() {
 
             {/* Left section - name */}
             <div className="w-full h-full flex flex-col justify-center items-center z-30">
-                <h1 className="text-5xl">Hi! I&apos;m&nbsp;
+                <motion.h1 initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}} className="text-5xl">Hi! I&apos;m&nbsp;
                     <span className="text-6xl tracking-wide text-transparent bg-clip-text bg-gradient-to-br from-indigo-400 to-purple-500 font-mono">OLAF </span>
-                </h1>
-                <h2 className="text-2xl text-black/50 mb-10">Frontend developer</h2>
+                </motion.h1>
+                <motion.h2 initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}} transition={{delay: 0.2}} className="text-2xl text-black/50 mb-10">Frontend developer</motion.h2>
 
                 <Button link="#about_section" text="know me better" />
             </div>
 
             {/* Right section - photo */}
-            <div className="hidden lg:flex w-full h-full justify-center items-center">
+            <motion.div initial={{opacity: 0}} animate={{opacity: 1}} className="hidden lg:flex w-full h-full justify-center items-center">
                 <Image src={avatarPic} alt={"avatar"} className="w-3/4 aspect-square max-w-[600px]" />
-            </div>
+            </motion.div>
 
             {/* Jumping arrow */}
             <motion.div initial={{x: '-50%', y: 280}} animate={{y: [280, 270, 280]}} transition={{repeat: Infinity}} className="shadow z-30 p-4 bg-white rounded-full absolute left-1/2 top-1/2 ">

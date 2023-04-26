@@ -65,11 +65,11 @@ export default function ContactSection() {
                     {/* Form */}
                     <div className="h-full py-5">
                         <form ref={form} onSubmit={(e) => onSubmit(e)} className="h-full flex flex-col gap-3">
-                            <FormInput name="name" value={formData.name} setValue={(e: any) => setFormData({...formData, name: e.target.value})} text="Your name" />
-                            <FormInput name="email" value={formData.email} setValue={(e: any) => setFormData({...formData, email: e.target.value})} text="Email address" />
-                            <FormInput name="message" value={formData.message} setValue={(e: any) => setFormData({...formData, message: e.target.value})} text="Message" area />
+                            <FormInput delay={0.2} name="name" value={formData.name} setValue={(e: any) => setFormData({...formData, name: e.target.value})} text="Your name" />
+                            <FormInput delay={0.4} name="email" value={formData.email} setValue={(e: any) => setFormData({...formData, email: e.target.value})} text="Email address" />
+                            <FormInput delay={0.6} name="message" value={formData.message} setValue={(e: any) => setFormData({...formData, message: e.target.value})} text="Message" area />
                             <div className="flex justify-end">
-                                <motion.button type="submit"  whileHover={'hover'} className="cursor-pointer">
+                                <motion.button initial={{opacity: 0, x: -20}} whileInView={{opacity: 1, x: 0}} viewport={{once: true}} transition={{delay: 0.2}} type="submit" whileHover={'hover'} className="cursor-pointer">
                                     <div className="w-full flex gap-4 justify-between items-center uppercase font-semibold px-5 py-1 text-sm md:text-base">
                                         <div>
                                         {
@@ -103,7 +103,9 @@ export default function ContactSection() {
                     </div>
                 </div>
                 <div className="hidden md:flex w-full flex-col justify-around items-center gap-2">
-                    <Image src={messagePic} alt={"Contact illustration"} className="w-2/3 hidden md:block" />
+                    <motion.div initial={{opacity: 0}} whileInView={{opacity: 1}} viewport={{once: true}} className="w-full flex justify-center items-center">
+                        <Image src={messagePic} alt={"Contact illustration"} className="w-2/3 hidden md:block" />
+                    </motion.div>
 
                     <div className="flex flex-col justify-center gap-3 items-center text-red">
                         <span className="mb-1">You can also find me here:</span>
