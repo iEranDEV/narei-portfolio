@@ -22,7 +22,7 @@ export default function ProjectsSection() {
             </motion.span>
             <motion.p initial={{opacity: 0}} whileInView={{opacity: 1}} viewport={{once: true}} className='text-black/50 md:w-1/2'>Below you can see my best projects and their working live versions. If you want to see the full list of apps I&apos;ve created, check out my github profile.</motion.p>
 
-            <div className="w-full h-full flex flex-col gap-32 mt-10 mb-32">
+            <div className="w-full h-full flex flex-col gap-32 mt-10 mb-32 overflow-hidden">
                 {/* Game center app */}
                 <motion.div initial={{x: 50, opacity: 0}} whileInView={{x: 0, opacity: 1}} viewport={{once: true}} transition={{delay: 0.2}} className="w-full flex items-center lg:justify-between flex-col lg:flex-row relative gap-5">
                     <Image src={projects_game_center} alt="Game center" priority={true} className='lg:w-[30rem] xl:w-[40rem] rounded-xl z-20 border-2' />
