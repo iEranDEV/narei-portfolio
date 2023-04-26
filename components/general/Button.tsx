@@ -10,8 +10,11 @@ type ButtonProps = {
 
 const buttonBorderVariants = {
     hover: {
-        width: '100%'
-    }
+        width: '100%',
+        transition: {
+            delay: 0
+        }
+    },
 }
 
 export default function Button({ text, white, icon, link }: ButtonProps) {
